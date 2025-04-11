@@ -1,0 +1,39 @@
+### 1. **flask==2.0.2**
+   - **Purpose**: Flask is a web framework for Python. It is used in this project to create a simple web server (API) that allows users to submit new license plates (such as lost vehicles) to a database through a web form.
+   - **Usage**: In your project, Flask handles requests, serves the HTML form, and manages interactions with the SQLite database (through API routes).
+
+### 2. **opencv-python==4.5.3.56**
+   - **Purpose**: OpenCV is a powerful library for computer vision. It is used in this project for reading and processing images, detecting license plates, and cropping them.
+   - **Usage**: OpenCV is used to load images, apply transformations, and extract bounding boxes around detected plates, then crop those plates for further processing (e.g., OCR).
+
+### 3. **yolov8==0.1.0**
+   - **Purpose**: YOLOv8 (You Only Look Once, version 8) is a state-of-the-art object detection model. It's used for detecting license plates in the input images.
+   - **Usage**: This package helps load the pre-trained YOLOv8 model, which is used to detect license plates within a given image by identifying bounding boxes around them.
+
+### 4. **easyocr==1.4.1**
+   - **Purpose**: EasyOCR is an OCR (Optical Character Recognition) tool. It allows us to extract text from images (in this case, license plates).
+   - **Usage**: It is used to extract text from the cropped license plate images. EasyOCR was tested and found to provide better results compared to Tesseract OCR for this project.
+
+### 5. **pillow==8.4.0**
+   - **Purpose**: Pillow is a Python Imaging Library (PIL) fork. It is used for opening, manipulating, and saving many different image file formats.
+   - **Usage**: Pillow is typically used for image processing tasks such as resizing, rotating, and converting images. In this project, it's used in conjunction with OpenCV and EasyOCR.
+
+### 6. **tesseract==4.0.0**
+   - **Purpose**: Tesseract is an open-source OCR engine. It extracts text from images.
+   - **Usage**: Though EasyOCR was preferred for better results, Tesseract was tested for OCR and used for extracting text from the license plates. It is included in the dependencies in case you want to switch between the two OCR tools.
+
+### 7. **sqlite3**
+   - **Purpose**: SQLite is a self-contained, serverless SQL database engine. It is included by default in Python’s standard library.
+   - **Usage**: SQLite is used in this project to manage the database of license plates, including adding new plates, comparing OCR results, and logging detected plates in the system.
+
+### 8. **matplotlib==3.4.3**
+   - **Purpose**: Matplotlib is a plotting library for Python. It is used for creating static, animated, and interactive visualizations.
+   - **Usage**: In this project, Matplotlib is used to visualize the cropped license plate images to confirm the cropping process visually.
+
+### 9. **roboflow==0.2.0**
+   - **Purpose**: Roboflow is a platform for building and managing computer vision models.
+   - **Usage**: You used Roboflow to train the YOLOv8 model on the license plate detection dataset. It helps with dataset management and model training.
+
+### 10. **numpy==1.21.2**
+   - **Purpose**: NumPy is a package for scientific computing with Python. It provides support for large, multi-dimensional arrays and matrices, along with a large collection of mathematical functions.
+   - **Usage**: In your project, NumPy is used to handle arrays for image coordinates, bounding boxes, and data manipulation during image processing and detection tasks.
